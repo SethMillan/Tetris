@@ -20,5 +20,13 @@ namespace Tetris
         {
             InitializeComponent();
         }
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Aquí puedes manejar el evento KeyDown
+        }
+        private void GameCanvas_Loaded(object sender, RoutedEventArgs e)
+        {
+            // Aquí puedes agregar la lógica que deseas ejecutar cuando el Canvas se carga
+        }
     }
 }
