@@ -53,6 +53,37 @@
             }
             return true;
         }
+        private void clearRow(int r)
+        {
+            for(int c = 0;c < Columns;c++)
+            {
+                grid[r,c] = 0;
+            }
+        }
+        private void moveDown(int r, int numRows)
+        {
+            for (int c = 0; c < Columns; c++)
+            {
+                grid[r + numRows, c] = grid[r, c];
+                grid[r, c] = 0;
+            }
+        }
 
+        public int clearFullRows()
+        {
+            int cleared = 0;
+            for(int r = Rows - 1; r >= 0; r--)
+            {
+                if (isRowFull(r))
+                {
+                    clearRow(r);
+                    cleared++;
+                }else if (cleared > 0)
+                {
+                    moveDown(r,cleared); //cleared = 0;
+                }
+            }   
+            return cleared;
+        }
     }
 }
