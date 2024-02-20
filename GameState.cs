@@ -25,11 +25,14 @@
         public BlockQueue BlockQueue { get;}
         public int Score { get; private set; }
         public bool GameOver { get; private set; }
+        public Block HeldBlock {  get; private set; }
+        public bool canHold {  get; private set; }
         public GameState()
         {
             GameGrid=new GameGrid(22,10);
             BlockQueue=new BlockQueue();
-            CurrentBlock = BlockQueue.GetAndUpdate();        
+            CurrentBlock = BlockQueue.GetAndUpdate();
+            canHold = true;
         }
         private bool BlockFirst()
         {
@@ -42,7 +45,25 @@
             }
             return true;
         }
-
+        public void HoldBlock()
+        {
+            if (!canHold)
+            {
+                return;
+            }
+            if (HeldBlock == null)
+            {
+                HeldBlock = CurrentBlock;
+                CurrentBlock=BlockQueue.GetAndUpdate();
+            }
+            else
+            {
+                Block tmp= CurrentBlock;
+                CurrentBlock = HeldBlock;
+                HeldBlock=tmp;
+            }
+            canHold=false;
+        }
 
         public void RotateBlockCW()
         {
@@ -100,6 +121,7 @@
             else
             {
                 CurrentBlock = BlockQueue.GetAndUpdate();
+                canHold = true;
             }
         }
 
