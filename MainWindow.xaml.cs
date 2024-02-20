@@ -61,7 +61,7 @@ namespace Tetris
                         Width = cellSize,
                         Height = cellSize
                     };
-                    Canvas.SetTop(ImageControl, (r - 2) * cellSize);
+                    Canvas.SetTop(ImageControl, (r - 2) * cellSize+10);
                     Canvas.SetLeft(ImageControl, c * cellSize);
                     GameCanvas.Children.Add(ImageControl);
                     imageControls[r, c] = ImageControl;
