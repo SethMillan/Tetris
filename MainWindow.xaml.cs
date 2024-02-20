@@ -142,10 +142,16 @@ namespace Tetris
             // Aquí puedes agregar la lógica que deseas ejecutar cuando el Canvas se carga
             await GameLoop();
         }
-        private void PlayAgain_Click(object sender, RoutedEventArgs e)
+        private async void PlayAgain_Click(object sender, RoutedEventArgs e)
         {
             // Aquí puedes agregar la lógica que deseas ejecutar cuando se hace clic en el botón "Play Again"
             // Por ejemplo, puedes reiniciar el juego o realizar cualquier otra acción necesaria.
+            gameState=new GameState();
+            GameOverMenu.Visibility = Visibility.Hidden;
+            await GameLoop();
+
+
+
         }
     }
 }
