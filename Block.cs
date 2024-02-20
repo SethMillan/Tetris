@@ -1,4 +1,5 @@
-﻿namespace Tetris
+﻿using System.Collections.Generic;
+namespace Tetris
 {
     public abstract class Block
     {
@@ -37,8 +38,8 @@
 
         public void move(int rows, int columns)
         {
-            offset.Row = rows;
-            offset.Column = columns;
+            offset.Row += rows;
+            offset.Column += columns;
         }
         public void reset()
         {

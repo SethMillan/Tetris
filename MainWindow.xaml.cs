@@ -100,6 +100,30 @@ namespace Tetris
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {
             // Aquí puedes manejar el evento KeyDown
+            if (gameState.GameOver)
+            {
+                return;
+            }
+            switch(e.Key)
+            {
+                case Key.Left:
+                    gameState.MoveBlockLeft();
+                    break;
+                case Key.Right: 
+                    gameState.MoveBlockRight();
+                    break;
+                case Key.Down:
+                    gameState.moveDownBlock();
+                    break;
+                case Key.Up:
+                    gameState.RotateBlockCW();
+                    break;
+                case Key.Z:
+                    gameState.RotateBlockCCW();
+                    break;
+                    default: return;
+            }
+            Draw(gameState);
         }
         private void GameCanvas_Loaded(object sender, RoutedEventArgs e)
         {
