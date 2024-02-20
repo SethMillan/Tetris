@@ -10,6 +10,14 @@
             {
                 currentBlock = value;
                 currentBlock.reset();
+                for (int i = 0; i < 2; i++)
+                {
+                    currentBlock.move(1, 0);
+                    if(!BlockFirst()) 
+                    {
+                        currentBlock.move(-1, 0);
+                    }
+                }
             }
         }
 
