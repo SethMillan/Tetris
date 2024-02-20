@@ -97,7 +97,17 @@ namespace Tetris
             DrawBlock(gameState.CurrentBlock);
         }
 
-
+        private async Task GameLoop()
+        {
+            Draw(gameState);
+            while(!gameState.GameOver)
+            {
+                await Task.Delay(500);
+                gameState.moveDownBlock();
+                Draw(gameState);
+            }
+            GameOverMenu.Visibility=Visibility.Visible;
+        }
 
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {
@@ -127,10 +137,10 @@ namespace Tetris
             }
             Draw(gameState);
         }
-        private void GameCanvas_Loaded(object sender, RoutedEventArgs e)
+        private async void GameCanvas_Loaded(object sender, RoutedEventArgs e)
         {
             // Aquí puedes agregar la lógica que deseas ejecutar cuando el Canvas se carga
-            Draw(gameState);
+            await GameLoop();
         }
         private void PlayAgain_Click(object sender, RoutedEventArgs e)
         {
