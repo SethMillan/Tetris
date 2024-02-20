@@ -19,3 +19,4 @@ D:\Aprendizaje\TAP\Tetris\Tetris\obj\Debug\net8.0-windows\refint\Tetris.dll
 D:\Aprendizaje\TAP\Tetris\Tetris\obj\Debug\net8.0-windows\Tetris.pdb
 D:\Aprendizaje\TAP\Tetris\Tetris\obj\Debug\net8.0-windows\Tetris.genruntimeconfig.cache
 D:\Aprendizaje\TAP\Tetris\Tetris\obj\Debug\net8.0-windows\ref\Tetris.dll
+D:\Aprendizaje\TAP\Tetris\Tetris\obj\Debug\net8.0-windows\Tetris_Content.g.cs
