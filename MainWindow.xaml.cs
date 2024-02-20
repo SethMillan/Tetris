@@ -25,19 +25,18 @@ namespace Tetris
             new BitmapImage(new Uri("Assets/TileYellow.png",UriKind.Relative)),
             new BitmapImage(new Uri("Assets/TileGreen.png",UriKind.Relative)),
             new BitmapImage(new Uri("Assets/TilePurple.png",UriKind.Relative)),
-            new BitmapImage(new Uri("Assets/TileRead.png",UriKind.Relative))
+            new BitmapImage(new Uri("Assets/TileRed.png",UriKind.Relative))
         };
         private readonly ImageSource[] blocksImages = new ImageSource[]
         {
             new BitmapImage(new Uri("Assets/Block-Empty.png",UriKind.Relative)),
             new BitmapImage(new Uri("Assets/Block-I.png",UriKind.Relative)),
             new BitmapImage(new Uri("Assets/Block-J.png",UriKind.Relative)),
-            new BitmapImage(new Uri("Assets/Blick-L.png",UriKind.Relative)),
+            new BitmapImage(new Uri("Assets/Block-L.png",UriKind.Relative)),
             new BitmapImage(new Uri("Assets/Block-O.png",UriKind.Relative)),
             new BitmapImage(new Uri("Assets/Block-S.png",UriKind.Relative)),
             new BitmapImage(new Uri("Assets/Block-T.png",UriKind.Relative)),
-            new BitmapImage(new Uri("Assets/Block-Z.png",UriKind.Relative)),
-
+            new BitmapImage(new Uri("Assets/Block-Z.png",UriKind.Relative))
         };
         private readonly Image[,] imageControls;
         private GameState gameState=new GameState();
@@ -97,6 +96,9 @@ namespace Tetris
             DrawGrid(gameState.GameGrid);
             DrawBlock(gameState.CurrentBlock);
         }
+
+
+
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {
             // Aquí puedes manejar el evento KeyDown

@@ -74,7 +74,7 @@
 
         private bool IsGameOver()
         {
-            return !(!GameGrid.isRowEmpty(0) && GameGrid.isRowEmpty(1));
+            return !(GameGrid.isRowEmpty(0) && GameGrid.isRowEmpty(1));
         }
 
         private void PlaceBlock()
