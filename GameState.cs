@@ -23,6 +23,7 @@
 
         public GameGrid GameGrid { get;}
         public BlockQueue BlockQueue { get;}
+        public int Score { get; private set; }
         public bool GameOver { get; private set; }
         public GameState()
         {
@@ -91,7 +92,7 @@
             {
                 GameGrid[p.Row, p.Column] = CurrentBlock.id;
             }
-            GameGrid.clearFullRows();
+            Score+=GameGrid.clearFullRows();
             if (IsGameOver())
             {
                 GameOver = true;
